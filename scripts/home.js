@@ -45,15 +45,21 @@ function readData() {
         <td>${taskData[i].activeTasks}</td>
         <td>${taskData[i].description}</td>
         <td><button id="update">Update</button></td>
-        <td><button id="delete">Delete</button></td>
+        <td><button onclick="deleteTask(${i})" id="delete">Delete</button></td>
         </tr>
     `;
   }
 
   document.getElementById("tbody").innerHTML = table;
 }
-// readData();
+readData();
 
 // === count ===
 // === delete ===
+function deleteTask(i) {
+  taskData.splice(i, 1);
+  localStorage.add = JSON.stringify(taskData);
+  readData();
+}
+
 // === update ===
