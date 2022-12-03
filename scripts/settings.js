@@ -1,0 +1,1 @@
+document.write("<p>hello, script-2.js script</p>")
