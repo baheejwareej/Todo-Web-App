@@ -105,12 +105,6 @@ a {
   position: relative;
 }
 
-.pro img {
-  position: absolute;
-  top: -10%;
-  right: 10%;
-}
-
 .status {
   margin-bottom: 3rem;
 }

@@ -52,7 +52,7 @@ function readData() {
 
   document.getElementById("tbody").innerHTML = table;
 }
-readData();
+// readData();
 
 // === count ===
 // === delete ===
