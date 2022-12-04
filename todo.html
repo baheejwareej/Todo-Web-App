@@ -1,56 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initail">
-  <title>Todo Web App</title>
-  <link href=styles/todo.css rel="stylesheet">
-</head>
-<body>
-  <div class="main">
-    <div class="glass">
-      <div class="dashboard">
-        <div class="user">
-          <img src="" alt="">
-        </div>
-        <div class="links">
-          <div class="link">
-            <h2>Guest</h2>
-          </div>
-          <div class="link">
-            <h2>Tasks</h2>
-          </div>
-          <div class="link">
-            <h2>Active</h2>
-          </div>
-          <div class="link">
-            <h2>Completed</h2>
-          </div>
-        </div>
-      </div>
-      <div class="activeTasks">
-        <div class="cards">
-          <div class="navBar">
-            <ul class="links">
-              <li><a href="home.html">Home</a></li>
-              <li><a href="todo.html">Todo</a></li>
-              <li><a href="settings.html">Settings</a></li>
-            </ul>
-          </div>
-          <div class="status">
-            <input type="text" placeholder="Active tasks => Add tasks">
-          </div>
-          <div class="card">
-              <h2>Added Tasks</h2>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initail" />
+    <title>Todo Web App</title>
+    <link href=styles/home.css rel="stylesheet">
+  </head>
+  <body>
+    <div class="main">
+      <div class="glass">
+        <div class="dashboard">
+          <div class="tasksCounter">
+            <div class="guest">
+              <h2>Guest</h2>
+            </div>
+            <div class="tasks">
+              <h4>Tasks</h4>
+              <small>total</small>
+            </div>
+            <div class="active">
+              <h4>Active</h4>
+              <small>active</small>
+            </div>
+            <div class="completed">
+              <h4>Completed</h4>
+              <small>done</small>
             </div>
           </div>
-          <div class="card">
-              <h2>Completed Tasks</h2>
+        </div>
+        <div class="mainBox">
+          <div class="cards">
+            <div class="navBar">
+              <ul class="links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="todo.html">Todo</a></li>
+                <li><a href="settings.html">Settings</a></li>
+              </ul>
+            </div>
+            <div class="quotes">
+              <!-- <input type="text" placeholder="Randomly Inspirational Quotes"> -->
+              <p>Randomly Inspirational Quotes</p>
+            </div>
+            <div class="inputs">
+              <input type="text" placeholder="active tasks" id="activeTasks" />
+              <input type="text" placeholder="description" id="description" />
+              <button id="add">Add Task</button>
+            </div>
+            <div class="output">
+              <table>
+                <tr>
+                  <th>task title</th>
+                  <th>description</th>
+                  <th>Complete</th>
+                  <th>Update</th>
+                  <th>Delete</th>
+                </tr>
+                <tbody id="tbody"></tbody>
+              </table>
+            </div>
+            <div class="output">
+              <table>
+                <tr>
+                  <th>task title</th>
+                  <th>description</th>
+                  <th>Complete</th>
+                  <th>Update</th>
+                  <th>Delete</th>
+                </tr>
+                <tbody id="tbody"></tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-  </div>
-  </div>
-</body>
+    </div>
+    <script src="scripts/home.js"></script>
+  </body>
 </html>

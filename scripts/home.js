@@ -35,15 +35,16 @@ if (localStorage.savedData != null) {
 }
 
 // === read inputs ===
+// show inputs in the table on the browser
 function readData() {
   let table = "";
 
   for (let i = 0; i < taskData.length; i++) {
     table += `
     <tr>
-        <td>${i}</td>
         <td>${taskData[i].activeTasks}</td>
         <td>${taskData[i].description}</td>
+        <td><button id="complete">Complete</button></td>
         <td><button id="update">Update</button></td>
         <td><button onclick="deleteTask(${i})" id="delete">Delete</button></td>
         </tr>

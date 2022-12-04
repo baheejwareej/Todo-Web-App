@@ -20,7 +20,7 @@ h4 {
   margin-bottom: 40px;
 }
 
-p{
+p {
   text-align: center;
 }
 
@@ -35,8 +35,8 @@ p{
 
 .glass {
   background: white;
-  min-height: 80vh;
-  width: 80%;
+  min-height: 100vh;
+  width: 90%;
   background: linear-gradient(
     to right bottom,
     rgba(255, 255, 255, 0.7),
@@ -49,7 +49,6 @@ p{
 }
 
 .navBar {
-  /* background: linear-gradient(to right top, #65dfc9, #6cdbeb); */
   background: linear-gradient(to right top, #8dc8fc, #6cdbeb);
   border-radius: 2rem;
   color: white;
@@ -58,9 +57,8 @@ p{
   position: relative;
   background-color: #65dfc9;
   overflow: hidden;
-  right: 40px;
   bottom: 70px;
-  width: 120%;
+  /* top: 50px; */
 }
 
 .navBar .links {
@@ -73,6 +71,7 @@ p{
   display: inline-block;
   padding: 10px 15px;
   text-transform: uppercase;
+  width: 150px;
 }
 
 .navBar .links li:hover {
@@ -142,7 +141,7 @@ a {
   border-radius: 2rem;
 }
 
-.inputs button:hover{
+.inputs button:hover {
   background: #64b9ea;
 }
 
@@ -152,7 +151,6 @@ a {
   flex-direction: column;
   justify-content: space-evenly;
 }
-
 
 .output {
   display: flex;
@@ -168,52 +166,36 @@ a {
   justify-content: space-between;
 }
 
-
-
-header {
-  font-family: "Poppins", sans-serif;
-  min-height: 20vh;
-  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+.tasks {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  right: 30px;
 }
 
-footer {
-  font-family: "Poppins", sans-serif;
-  min-height: 20vh;
-  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+.active {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 60px;
-  position: absolute;
-  bottom: 0;
+  right: 30px;
+}
+
+.completed {
+  display: flex;
+}
+
+table {
   width: 100%;
-}
-
-.tasks{
-  display: flex;
-}
-
-.active{
-  display: flex;
-}
-
-.completed{
-  display: flex;
-}
-
-table{
-  width:100%;
   text-align: center;
   margin: 10px 0;
 }
 
-table th{
+table th {
   text-transform: uppercase;
 }
 
-th,td {
+th,
+td {
   padding: 5px;
+}
+
+.tasksCounter {
+  position: absolute;
+  top: 140px;
 }

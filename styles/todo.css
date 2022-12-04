@@ -12,10 +12,21 @@ h2 {
   margin-bottom: 40px;
 }
 
+h4 {
+  color: #16427f;
+  font-weight: 500;
+  opacity: 0.8;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+p {
+  text-align: center;
+}
+
 .main {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
-  /* background: linear-gradient(to right top, #65dfc9, #6cdbeb); */
   background: linear-gradient(to right top, #8dc8fc, #6cdbeb);
   display: flex;
   align-items: center;
@@ -24,8 +35,8 @@ h2 {
 
 .glass {
   background: white;
-  min-height: 80vh;
-  width: 60%;
+  min-height: 100vh;
+  width: 90%;
   background: linear-gradient(
     to right bottom,
     rgba(255, 255, 255, 0.7),
@@ -46,21 +57,22 @@ h2 {
   position: relative;
   background-color: #65dfc9;
   overflow: hidden;
-  right: 40px;
+  /* right: 40px; */
   bottom: 70px;
-  width: 120%;
+  /* width: 110%; */
 }
 
 .navBar .links {
   float: left;
   width: 70%;
-  margin-left: 90px;
+  margin-left: 250px;
 }
 
 .navBar .links li {
   display: inline-block;
   padding: 10px 15px;
   text-transform: uppercase;
+  width: 150px;
 }
 
 .navBar .links li:hover {
@@ -92,15 +104,16 @@ a {
   border-radius: 2rem;
 }
 
-.activeTasks {
+#activeTasks {
   flex: 2;
+  /* border-radius: 2rem; */
 }
 
-.status {
+.quotes {
   margin-bottom: 3rem;
 }
 
-.status input {
+.quotes input {
   background: linear-gradient(
     to right bottom,
     rgba(255, 255, 255, 0.7),
@@ -112,14 +125,35 @@ a {
   border-radius: 2rem;
 }
 
-.activeTasks {
+.inputs {
+  margin-bottom: 3rem;
+  display: flex;
+}
+
+.inputs button {
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border: none;
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 2rem;
+}
+
+.inputs button:hover {
+  background: #64b9ea;
+}
+
+.mainBox {
   margin: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
-.card {
+.output {
   display: flex;
   background: linear-gradient(
     to left top,
@@ -133,24 +167,29 @@ a {
   justify-content: space-between;
 }
 
-header {
-  font-family: "Poppins", sans-serif;
-  min-height: 20vh;
-  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+.tasks {
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-footer {
-  font-family: "Poppins", sans-serif;
-  min-height: 20vh;
-  background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+.active {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 60px;
-  position: absolute;
-  bottom: 0;
+}
+
+.completed {
+  display: flex;
+}
+
+table {
   width: 100%;
+  text-align: center;
+  margin: 10px 0;
+}
+
+table th {
+  text-transform: uppercase;
+}
+
+th,
+td {
+  padding: 5px;
 }
