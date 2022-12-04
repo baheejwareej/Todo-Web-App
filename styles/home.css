@@ -12,14 +12,6 @@ h2 {
   margin-bottom: 40px;
 }
 
-h4 {
-  color: #16427f;
-  font-weight: 500;
-  opacity: 0.8;
-  margin: 0 auto;
-  margin-bottom: 40px;
-}
-
 p {
   text-align: center;
 }
@@ -58,7 +50,6 @@ p {
   background-color: #65dfc9;
   overflow: hidden;
   bottom: 70px;
-  /* top: 50px; */
   width: 110%;
 }
 
@@ -103,6 +94,11 @@ a {
   );
   border-radius: 2rem;
   width: 20%;
+}
+
+.tasksCounter {
+  position: fixed;
+  top: 80px;
 }
 
 #activeTasks {
@@ -168,20 +164,6 @@ a {
   justify-content: space-between;
 }
 
-.tasks {
-  display: flex;
-  right: 30px;
-}
-
-.active {
-  display: flex;
-  right: 30px;
-}
-
-.completed {
-  display: flex;
-}
-
 table {
   width: 100%;
   text-align: center;
@@ -195,9 +177,4 @@ table th {
 th,
 td {
   padding: 5px;
-}
-
-.tasksCounter {
-  position: absolute;
-  top: 140px;
 }

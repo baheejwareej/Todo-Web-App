@@ -45,11 +45,8 @@ h2 {
   position: relative;
   background-color: #65dfc9;
   overflow: hidden;
-  /* right: 40px; */
-  left: 100px;
-  bottom: 160px;
+  bottom: 141px;
   width: 110%;
-  align-content: center;
 }
 
 .navBar .links {
@@ -62,6 +59,7 @@ h2 {
   display: inline-block;
   padding: 10px 15px;
   text-transform: uppercase;
+  width: 150px;
 }
 
 .navBar .links li:hover {
@@ -94,12 +92,17 @@ a {
   width: 20%;
 }
 
+.tasksCounter {
+  position: fixed;
+  top: 80px;
+}
+
 h3 {
   color: #1f66ca;
 }
 
 .status {
-  margin-bottom: 3rem;
+  /* margin-bottom: 3rem; */
   display: flex;
   text-transform: uppercase;
 }

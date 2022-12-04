@@ -8,8 +8,6 @@ let taskData; // this is for saving data in an array
 // console.log(add.attributes);
 // add task title with description in an object
 add.onclick = function () {
-  // console.log(add.attributes);
-  // console.log("test the function")
   let tasksAndDescription = {
     activeTasks: activeTasks.value,
     description: description.value,
@@ -22,7 +20,6 @@ add.onclick = function () {
 
   // saving data in the local storage
   localStorage.setItem("savedData", JSON.stringify(taskData));
-  // console.log(tasksAndDescription);/
 
   readData(); // because it is related to this buttom
 };

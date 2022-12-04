@@ -12,14 +12,6 @@ h2 {
   margin-bottom: 40px;
 }
 
-h4 {
-  color: #16427f;
-  font-weight: 500;
-  opacity: 0.8;
-  margin: 0 auto;
-  margin-bottom: 40px;
-}
-
 p {
   text-align: center;
 }
@@ -105,6 +97,11 @@ a {
   width: 20%;
 }
 
+.tasksCounter {
+  position: fixed;
+  top: 80px;
+}
+
 #activeTasks {
   flex: 2;
   /* border-radius: 2rem; */
@@ -166,18 +163,6 @@ a {
   padding: 2rem;
   box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.2);
   justify-content: space-between;
-}
-
-.tasks {
-  display: flex;
-}
-
-.active {
-  display: flex;
-}
-
-.completed {
-  display: flex;
 }
 
 table {
