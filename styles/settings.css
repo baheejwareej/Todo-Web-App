@@ -45,8 +45,9 @@ h2 {
   position: relative;
   background-color: #65dfc9;
   overflow: hidden;
-  bottom: 141px;
+  bottom: 135px;
   width: 110%;
+  right: -10px;
 }
 
 .navBar .links {
@@ -102,9 +103,11 @@ h3 {
 }
 
 .status {
-  /* margin-bottom: 3rem; */
   display: flex;
   text-transform: uppercase;
+  position: relative;
+  top: 10px;
+  left: 60px;
 }
 
 .status h3 {
@@ -122,7 +125,7 @@ h3 {
 }
 
 #reset {
-  width: 100px;
+  width: 250px;
   text-transform: uppercase;
 }
 
@@ -130,7 +133,7 @@ h3 {
   color: #1f66ca;
   background-color: #ffffff;
   border-color: #ffffff;
-  width: 100px;
+  width: 250px;
 }
 
 .activeTasks {
