@@ -94,6 +94,47 @@ a {
   );
   border-radius: 2rem;
   width: 20%;
+  overflow: hidden;
+  margin: 10px auto;
+  font-weight: bold;
+}
+
+.dashboard .tasks{
+  width: 50%;
+  float: left;
+  padding: 10px;
+}
+
+.dashboard .active{
+  width: 50%;
+  float: left;
+  padding: 10px;
+}
+
+.dashboard .completed{
+  width: 50%;
+  float: left;
+  padding: 10px;
+}
+
+.dashboard .tasks,
+.dashboard .active,
+.dashboard .completed{
+  color: #1f66ca;
+  padding: 1px 5px;
+  font-weight: bold;
+}
+
+.dashboard .tasks span{
+  /* background-color:#ef9696 ; */
+}
+
+.dashboard .active span{
+  /* background-color:#630202 ; */
+}
+
+.dashboard .completed span{
+  /* background-color:#f5f5f5 ; */
 }
 
 .tasksCounter {

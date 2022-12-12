@@ -2,27 +2,42 @@
 let activeTasks = document.getElementById("activeTasks");
 let description = document.getElementById("description");
 let add = document.getElementById("add");
+let changeButton = "Add Task";
+let reset = document.getElementById("reset");
 let taskData; // this is for saving data in an array
+let fake; // this is a fake variable to use the index which inside update function
+
+// localStorage.clear();
 
 // === create task ===
-// console.log(add.attributes);
+
 // add task title with description in an object
+
 add.onclick = function () {
-  // console.log(add.attributes);
-  // console.log("test the function")
+
   let tasksAndDescription = {
     activeTasks: activeTasks.value,
     description: description.value,
   };
 
   // insert tasksAndDescription inside taskData
-  taskData.push(tasksAndDescription);
+
+  taskData.push(tasksAndDescription); // ****error****
+  taskData[fake] = tasksAndDescription;
+
+  // if(changeButton === "create"){
+  //   taskData.push(tasksAndDescription); // ****error****
+  // }else{
+  //   taskData[fake] = tasksAndDescription; // ****error****
+  // }
+  
 
   // === save in local storage ===
 
   // saving data in the local storage
   localStorage.setItem("savedData", JSON.stringify(taskData));
-  // console.log(tasksAndDescription);/
+
+  clearPalceHolders();
 
   readData(); // because it is related to this buttom
 };
@@ -34,26 +49,37 @@ if (localStorage.savedData != null) {
   taskData = [];
 }
 
+// clear inputs
+function clearPalceHolders(){
+  activeTasks.value = "";
+  description.value = "";
+}
+
 // === read inputs ===
 function readData() {
+  // console.log("task data", taskData);
   let table = "";
 
   for (let i = 0; i < taskData.length; i++) {
     table += `
     <tr>
-        
         <td>${taskData[i].activeTasks}</td>
         <td>${taskData[i].description}</td>
         <td><button id="complete">Complete</button></td>
-        <td><button id="update">Update</button></td>
+        <td><button onclick="updateTask(${i})" id="update">Update</button></td>
         <td><button onclick="deleteTask(${i})" id="delete">Delete</button></td>
         </tr>
     `;
   }
 
   document.getElementById("tbody").innerHTML = table;
+
+  
 }
 readData();
+
+
+
 
 // ** read comleted task to the second table in todo page (completed tasks) **
 function readCompletedTasks() {
@@ -70,4 +96,16 @@ function deleteTask(i) {
   readData();
 }
 
+
 // === update ===
+function updateTask(i){
+  activeTasks.value = taskData[i].activeTasks;
+  description.value = taskData[i].description;
+  add.innerHTML = "Update";
+  changeButton = "Update";
+  fake = i; // now this is readable as a global i
+  scroll({
+    top: 0,
+    behavior: "smooth",
+  })
+}
