@@ -1,46 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initail" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo Web App</title>
-    <link href=styles/settings.css rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet" />
+    <link href="style/settings.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
-    <div class="main">
-      <div class="glass">
-        <div class="dashboard">
-          <div class="guest">
-            <h2>Guest</h2>
-          </div>
-          <div class="tasks">
-            Tasks<span>0</span>
-          </div>
-          <div class="active">
-            Tasks<span>0</span>
-          </div>
-          <div class="completed">
-            Tasks<span>0</span>
-          </div>
-      </div>
-        <div class="activeTasks">
-          <div class="navBar">
-            <ul class="links">
-              <li><a href="home.html">Home</a></li>
-              <li><a href="todo.html">Todo</a></li>
-              <li><a href="settings.html">Settings</a></li>
-            </ul>
-          </div>
-          <div class="status">
-            <h3>Show Quotes on Home</h3>
-            <button>Click</button>
-          </div>
-          <div class="status">
-            <h3>delete all tasks</h3>
-            <button id="reset">reset all</button>
-          </div>
-        </div>
-      </div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="todo.html">Todo</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+    <div class="todo-container"></div>
+    <div class="task-stats">
+      <div class="tasks-count">Tasks<span>0</span></div>
+      <div class="tasks-active">Active<span>0</span></div>
+      <div class="tasks-completed">Completed<span>0</span></div>
     </div>
     <script src="scripts/main.js"></script>
   </body>

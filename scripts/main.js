@@ -1,111 +1,119 @@
-// -- calling all IDs from HTML --
-let activeTasks = document.getElementById("activeTasks");
-let description = document.getElementById("description");
-let add = document.getElementById("add");
-let changeButton = "Add Task";
-let reset = document.getElementById("reset");
-let taskData; // this is for saving data in an array
-let fake; // this is a fake variable to use the index which inside update function
+// setting up variables
+let theInput = document.querySelector(".add-task input");
+let theAddButton = document.querySelector(".add-task .plus");
+let tasksContainer = document.querySelector(".tasks-content");
+let tasksCount = document.querySelector(".tasks-count span");
+let tasksCompleted = document.querySelector(".tasks-completed span");
 
-// localStorage.clear();
-
-// === create task ===
-
-// add task title with description in an object
-
-add.onclick = function () {
-
-  let tasksAndDescription = {
-    activeTasks: activeTasks.value,
-    description: description.value,
-  };
-
-  // insert tasksAndDescription inside taskData
-
-  taskData.push(tasksAndDescription); // ****error****
-  taskData[fake] = tasksAndDescription;
-
-  // if(changeButton === "create"){
-  //   taskData.push(tasksAndDescription); // ****error****
-  // }else{
-  //   taskData[fake] = tasksAndDescription; // ****error****
-  // }
-  
-
-  // === save in local storage ===
-
-  // saving data in the local storage
-  localStorage.setItem("savedData", JSON.stringify(taskData));
-
-  clearPalceHolders();
-
-  readData(); // because it is related to this buttom
+// focus on imput field
+window.onload = function () {
+  theInput.focus();
 };
 
-// save tasks data in array with if condition
-if (localStorage.savedData != null) {
-  taskData = JSON.parse(localStorage.savedData);
-} else {
-  taskData = [];
-}
+// adding the task
+theAddButton.onclick = function () {
+  // if input is emrty
+  if (theInput.value === "") {
+    Swal.fire("No Tasks Added");
+  } else {
+    let noTasksMsg = document.querySelector(".no-tasks-message");
 
-// clear inputs
-function clearPalceHolders(){
-  activeTasks.value = "";
-  description.value = "";
-}
+    // check if span with no tasks message is exist
+    if (document.body.contains(document.querySelector(".no-tasks-message"))) {
+      // remove no tasks message
+      noTasksMsg.remove();
+    }
 
-// === read inputs ===
-function readData() {
-  // console.log("task data", taskData);
-  let table = "";
+    // create main span element
+    let mainSpan = document.createElement("span");
 
-  for (let i = 0; i < taskData.length; i++) {
-    table += `
-    <tr>
-        <td>${taskData[i].activeTasks}</td>
-        <td>${taskData[i].description}</td>
-        <td><button id="complete">Complete</button></td>
-        <td><button onclick="updateTask(${i})" id="update">Update</button></td>
-        <td><button onclick="deleteTask(${i})" id="delete">Delete</button></td>
-        </tr>
-    `;
+    // create delete button
+    let deleteElement = document.createElement("span");
+
+    // create the main span text
+    let text = document.createTextNode(theInput.value);
+
+    // create the delete button text
+    let deleteText = document.createTextNode("Delete");
+
+    // add text to main span
+    mainSpan.appendChild(text);
+
+    // add class to main span
+    mainSpan.className = "task-box";
+
+    // add text to delete button
+    deleteElement.appendChild(deleteText);
+
+    // add class to delete button
+    deleteElement.className = "delete";
+
+    // add delete button to main span
+    mainSpan.appendChild(deleteElement);
+
+    // add the task to the container
+    tasksContainer.appendChild(mainSpan);
+
+    // empty the input
+    theInput.value = "";
+
+    // focus on imput field
+    theInput.focus();
+
+    // calculate
+    calculateTasks();
+  }
+};
+
+document.addEventListener("click", function (e) {
+  // delete task
+  if (e.target.className == "delete") {
+    // remove current task
+    e.target.parentNode.remove();
+
+    // check number of tasks inside the container
+    if (tasksContainer.childElementCount == 0) {
+      createNoTasks();
+    }
   }
 
-  document.getElementById("tbody").innerHTML = table;
+  // finish task
+  if (e.target.classList.contains("task-box")) {
+    // toggle class finished
+    e.target.classList.toggle("finished");
+  }
 
-  
+  // calculate tasks
+  calculateTasks();
+});
+
+// function to create no tasks message
+function createNoTasks() {
+  // create message span element
+  let msgSpan = document.createElement("span");
+
+  // create the text message
+  let msgText = document.createTextNode("No Tasks To Show");
+
+  // add text to message span element
+  msgSpan.appendChild(msgText);
+
+  // add class to message span
+  msgSpan.className = "no-tasks-message";
+
+  // appendthe the message span element to the task container
+  tasksContainer.appendChild(msgSpan);
 }
-readData();
 
+// function to calculate tasks
+function calculateTasks() {
+  // claculate all tasks
+  tasksCount.innerHTML = document.querySelectorAll(
+    ".tasks-content .task-box"
+  ).length;
 
-
-
-// ** read comleted task to the second table in todo page (completed tasks) **
-function readCompletedTasks() {
-  for (let i = 0; i < taskData.length; i++) {}
-
-  document.getElementById("tbody2").innerHTML = table;
-}
-
-// === count ===
-// === delete ===
-function deleteTask(i) {
-  taskData.splice(i, 1);
-  localStorage.add = JSON.stringify(taskData);
-  readData();
-}
-
-
-// === update ===
-function updateTask(i){
-  activeTasks.value = taskData[i].activeTasks;
-  description.value = taskData[i].description;
-  add.innerHTML = "Update";
-  changeButton = "Update";
-  fake = i; // now this is readable as a global i
-  scroll({
-    top: 0,
-    behavior: "smooth",
-  })
+  // claculate completed tasks
+  tasksCompleted.innerHTML = document.querySelectorAll(
+    ".tasks-content .finished"
+  ).length;
 }
