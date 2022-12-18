@@ -55,9 +55,10 @@
   padding: 15px;
 }
 
-.todo-container .tasks-content .no-tasks-message {
+.todo-container .tasks-content .Completed-Tasks-Table {
   color: #777;
   font-size: 15px;
+  font-weight: bold;
 }
 
 .todo-container .tasks-content > span {

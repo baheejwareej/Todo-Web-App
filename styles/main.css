@@ -62,7 +62,7 @@ nav a:hover {
   border: none;
   background-color: rgba(255, 255, 255, 0.3);
   /* width: calc(100% - 15px); */
-  color: #fff;
+  /* color: #fff; */
   font-size: 20px;
 }
 
@@ -97,6 +97,7 @@ nav a:hover {
 .todo-container .tasks-content .no-tasks-message {
   color: #777;
   font-size: 15px;
+  font-weight: bold;
 }
 
 .todo-container .tasks-content > span {
@@ -150,11 +151,15 @@ nav a:hover {
 }
 
 .task-stats {
+  position: fixed;
   overflow: hidden;
   margin: 10px auto;
-  width: 600px;
-  height: 125px;
-  font-size: 18px;
+  top: 3.6%;
+  right: 75%;
+  /* width: 600px; */
+  width: 300px;
+  height: 59.3%;
+  font-size: 22px;
   background: linear-gradient(
     to right bottom,
     rgba(255, 255, 255, 0.7),
@@ -164,17 +169,18 @@ nav a:hover {
 }
 
 .task-stats .tasks-count {
-  width: 96.59%;
+  width: 99%;
   padding: 10px;
 }
 
 .task-stats .tasks-active {
-  width: 96.59%;
+  width: 99%;
   padding: 10px;
 }
 
 .task-stats .tasks-completed {
-  width: 96.59%;
+  /* width: 96.59%; */
+  width: 99%;
   padding: 10px;
 }
 
@@ -182,8 +188,8 @@ nav a:hover {
 .task-stats .tasks-active span,
 .task-stats .tasks-completed span {
   color: #fff;
-  padding: 5px 20px;
-  font-size: 10px;
+  padding: 5px 30px;
+  font-size: 18px;
   border-radius: 4px;
   font-weight: bold;
   float: right;
@@ -199,4 +205,8 @@ nav a:hover {
 
 .task-stats .tasks-completed span {
   background-color: #e9791e;
+}
+
+h3 {
+  text-align: center;
 }
