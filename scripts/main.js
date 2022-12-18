@@ -32,11 +32,23 @@ theAddButton.onclick = function () {
     // create delete button
     let deleteElement = document.createElement("span");
 
+    // create update button
+    let updateElement = document.createElement("span");
+
+    // create complete button
+    let completeElement = document.createElement("span");
+
     // create the main span text
     let text = document.createTextNode(taskTitle.value);
 
     // create the delete button text
     let deleteText = document.createTextNode("Delete");
+
+    // create the update button text
+    let updateText = document.createTextNode("Update");
+
+    // create the complete button text
+    let completeText = document.createTextNode("Complete");
 
     // add text to main span
     mainSpan.appendChild(text);
@@ -47,11 +59,29 @@ theAddButton.onclick = function () {
     // add text to delete button
     deleteElement.appendChild(deleteText);
 
+    // add text to update button
+    updateElement.appendChild(updateText);
+
+    // add text to complete button
+    completeElement.appendChild(completeText);
+
     // add class to delete button
     deleteElement.className = "delete";
 
+    // add class to update button
+    updateElement.className = "update";
+
+    // add class to complete button
+    completeElement.className = "complete";
+
     // add delete button to main span
     mainSpan.appendChild(deleteElement);
+
+    // add update button to main span
+    mainSpan.appendChild(updateElement);
+
+    // add complete button to main span
+    mainSpan.appendChild(completeElement);
 
     // add the task to the container
     tasksContainer.appendChild(mainSpan);
