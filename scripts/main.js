@@ -5,7 +5,7 @@ let theAddButton = document.querySelector(".add-task .plus");
 let tasksContainer = document.querySelector(".tasks-content");
 let tasksCount = document.querySelector(".tasks-count span");
 let tasksCompleted = document.querySelector(".tasks-completed span");
-let arrayOfTasks = [];
+let dataPro = [];
 
 // focus on imput field
 window.onload = function () {
@@ -125,7 +125,7 @@ function createNoTasks() {
   let msgSpan = document.createElement("span");
 
   // create the text message
-  let msgText = document.createTextNode("No Tasks To Show");
+  let msgText = document.createTextNode("Active Tasks");
 
   // add text to message span element
   msgSpan.appendChild(msgText);
