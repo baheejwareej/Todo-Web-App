@@ -1,19 +1,21 @@
 // setting up variables
-let theInput = document.querySelector(".add-task input");
+let taskTitle = document.querySelector(".add-task .task-title");
+let taskDescription = document.querySelector(".add-task .task-description");
 let theAddButton = document.querySelector(".add-task .plus");
 let tasksContainer = document.querySelector(".tasks-content");
 let tasksCount = document.querySelector(".tasks-count span");
 let tasksCompleted = document.querySelector(".tasks-completed span");
+let arrayOfTasks = [];
 
 // focus on imput field
 window.onload = function () {
-  theInput.focus();
+  taskTitle.focus();
 };
 
 // adding the task
 theAddButton.onclick = function () {
   // if input is emrty
-  if (theInput.value === "") {
+  if (taskTitle.value === "") {
     Swal.fire("No Tasks Added");
   } else {
     let noTasksMsg = document.querySelector(".no-tasks-message");
@@ -31,7 +33,7 @@ theAddButton.onclick = function () {
     let deleteElement = document.createElement("span");
 
     // create the main span text
-    let text = document.createTextNode(theInput.value);
+    let text = document.createTextNode(taskTitle.value);
 
     // create the delete button text
     let deleteText = document.createTextNode("Delete");
@@ -55,10 +57,10 @@ theAddButton.onclick = function () {
     tasksContainer.appendChild(mainSpan);
 
     // empty the input
-    theInput.value = "";
+    taskTitle.value = "";
 
     // focus on imput field
-    theInput.focus();
+    taskTitle.focus();
 
     // calculate
     calculateTasks();

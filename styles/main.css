@@ -61,7 +61,7 @@ nav a:hover {
   padding: 10px 15px;
   border: none;
   background-color: rgba(255, 255, 255, 0.3);
-  width: calc(100% - 15px);
+  /* width: calc(100% - 15px); */
   color: #fff;
   font-size: 20px;
 }
@@ -111,13 +111,38 @@ nav a:hover {
 
 .todo-container .tasks-content .task-box .delete {
   float: right;
-  background-color: #e91e63;
+  background-color: #e63872;
   padding: 4px 10px;
   color: #fff;
   font-size: 12px;
   font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
+  margin-left: 5px;
+}
+
+.todo-container .tasks-content .task-box .update {
+  float: right;
+  background-color: #e63872;
+  padding: 4px 10px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.todo-container .tasks-content .task-box .complete {
+  float: right;
+  background-color: #e63872;
+  padding: 4px 10px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
 }
 
 .todo-container .tasks-content .task-box.finished {
