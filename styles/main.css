@@ -154,11 +154,11 @@ nav a:hover {
   position: fixed;
   overflow: hidden;
   margin: 10px auto;
-  top: 3.6%;
+  top: 3.2%;
   right: 75%;
   /* width: 600px; */
   width: 300px;
-  height: 59.3%;
+  height: 90%;
   font-size: 22px;
   background: linear-gradient(
     to right bottom,
